@@ -1,5 +1,6 @@
- var textAreaEl = document.getElementsByClassName(description);
+var currentDayEl = document.querySelector("#currentDay");
 
- textAreaEl.addEventListener("click", function () {
-    textAreaEl.css('border');
- });
+//Today's Date
+currentDayEl.textContent = moment().format('dddd') + ", " +  moment().format("MMM Do");   
+
+

@@ -8,10 +8,11 @@ textarea {
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
+  color: #000000; 
+  border-left: 1px solid black;
   padding: 10px;
-  height: 73px;
-  width: 900px;
+  outline-color: #06aed5;
+  height: 75px;
 }
 
 .jumbotron {
@@ -22,11 +23,8 @@ textarea {
   border-bottom: 10px solid black;
 }
 
-.description {
-  white-space: pre-wrap;
-  display: flex;
-  justify-content: center;
-  width: 900px; 
+.description { /*Does this go in textArea?*/
+  white-space: pre-wrap; 
 }
 
 .time-block { /*what does this go to?*/
@@ -34,27 +32,15 @@ textarea {
   border-radius: 15px;
 }
 
-table {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px; 
-}
-
 .row {
   white-space: pre-wrap;
   border-top: 2px solid white;
 }
 
-td {
-    height: 75px;
-}
-
 .hour {
-  text-align: right;
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
-  width: 100px;
 }
 
 .past {
@@ -72,20 +58,13 @@ td {
   color: white;
 }
 
-.buttonBox {
-    display: flex;
-    align-items: center;
-}
-
 .saveBtn {
   border-style: none;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
-  width: 100px;
   height: 75px;
-
 }
 
 .saveBtn i:hover {
@@ -93,3 +72,4 @@ td {
   transition: all 0.3s ease-in-out;
   color: black;
 }
+
