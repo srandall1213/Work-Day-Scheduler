@@ -23,11 +23,11 @@ textarea {
   border-bottom: 10px solid black;
 }
 
-.description { /*Does this go in textArea?*/
+.description { 
   white-space: pre-wrap; 
 }
 
-.time-block { /*what does this go to?*/
+.time-block { 
   text-align: center;
   border-radius: 15px;
 }

@@ -1,26 +1,29 @@
-var descriptionEl = document.querySelector("#description");
-
-
 //Today's Date
 var currentDayEl = document.getElementById("currentDay");
 currentDayEl.textContent = moment().format('dddd') + ", " +  moment().format("MMMM Do");  
 
-//Saves event to storage and saves on refresh (WORKS AT 9AM SLOT ONLY)
-var saveBtn = document.querySelector("#save");
-
+//Saves event to storage and saves on refresh 
 function renderEvent() {
-   var myEvent = localStorage.getItem("My Event:");
-   descriptionEl.textContent = myEvent;
-}
+   $('#9AM .description').val(localStorage.getItem('9AM'));
+   $('#10AM .description').val(localStorage.getItem('10AM'));
+   $('#11AM .description').val(localStorage.getItem('11AM'));
+   $('#12PM .description').val(localStorage.getItem('12PM'));
+   $('#1PM .description').val(localStorage.getItem('1PM'));
+   $('#2PM .description').val(localStorage.getItem('2PM'));
+   $('#3PM .description').val(localStorage.getItem('3PM'));
+   $('#4PM .description').val(localStorage.getItem('4PM'));
+   $('#5PM .description').val(localStorage.getItem('5PM'));
+};
 
-saveBtn.addEventListener("click", function(event) {
-   event.preventDefault();
-   localStorage.setItem("My Event:", descriptionEl.value);
-   
+$(".saveBtn").on('click', function () {
+   var row = $(this).closest(".row")
+
+   var description = row.find(".description").val();
+   var hour = row.attr('id');
+
+   localStorage.setItem(hour, description);
 });
 renderEvent();
-
-
 
 
 
