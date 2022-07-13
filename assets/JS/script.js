@@ -27,22 +27,30 @@ renderEvent();
 
 
 
-// Change descriptionEl color based on the time of day - not working yet
-// function colorChanger() {
-//    setInterval(function () {
-//        var hourEl = document.querySelector("#hour");
-//        var currentTime = moment().format("hh:mm a");
-//        if (currentTime > hourEl) {
-//          descriptionEl.classList.add("future");
-//        } else if (currentTime < hourEl) {
-//          descriptionEl.classList.add("past");
-//        } else {
-//          descriptionEl.classList.add("present");
-//        }
-//        console.log(currentTime);
-       
-// }, 1000);
-// }
-// colorChanger();
+// Change descriptionEl color based on the time of day
+function colorChanger() {
+   setInterval(function () {
+      var now = moment().format("H");
+      console.log(now);
+
+      var descriptionEl = $(".description");
+
+      for (i = 0; i < descriptionEl.length; i++) {
+         var stringID = descriptionEl[i].id;
+         var descripID = document.getElementById(descriptionEl[i].id);
+
+         $(descriptionEl[i].id).removeClass(".past .present .future");
+
+         if (stringID < now) {
+            $(descripID).addClass("past");
+         } else if (stringID > now) {
+            $(descripID).addClass("future");
+         } else {
+            $(descripID).addClass("present");
+         }
+      }      
+   }, 1000);
+}
+colorChanger();
 
 
